@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Movie Directory</title>
+</head>
+<body>
+    <header>
+        <h1>Movie Directory</h1>
+        <div id="pages">
+            <a href="">Search Movie</a>
+            <a href="">List of Movies</a>
+            <a href="">Add Movie</a>
+        </div>
+    </header>
+    <div class="form">
+        <form>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" required>
+            <label for="desc">Description:</label>
+            <textarea name="desc" id="desc" required></textarea>
+            <label for="director">Director:</label>
+            <input type="text" name="director" id="director" required>
+            <label for="Date-Aired">Date Aired:</label>
+            <input type="date" name="Date-Aired" id="Date-Aired" required>
+            <label for="genre">Genre:</label>
+            <input type="text" name="genre" id="genre" required>
+            <label for="duration">Duration:</label>
+            <input type="text" name="duration" id="duration" required>
+            <label for="score">Score (1-10):</label>
+            <select name="score" id="score" required>
+                <option disabled selected>Select Score</option>
+                <option value="10">(10) Masterpiece</option>
+                <option value="9">(9) Great</option>
+                <option value="8">(8) Very Good</option>
+                <option value="7">(7) Good</option>
+                <option value="6">(6) Fine</option>
+                <option value="5">(5) Average</option>
+                <option value="4">(4) Bad</option>
+                <option value="3">(3) Very Bad</option>
+                <option value="2">(2) Horrible</option>
+                <option value="1">(1) Appalling</option>
+            </select>
+            <label for="image">Cover Image:</label>
+            <input type="file" name="image" id="image" required>
+            <input type="submit" value="Add Movie">
+        </form>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
