@@ -9,12 +9,12 @@ header {
     justify-content: space-around;
 }
 
-#pages {
+.pages {
     display: flex;
     align-items: center;
 }
 
-#pages>a {
+.pages>a {
     font-size: 20px;
     margin: 10px;
     text-decoration: none;
