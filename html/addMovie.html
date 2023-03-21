@@ -11,28 +11,28 @@
     <header>
         <h1>Movie Directory</h1>
         <div class="pages">
-            <a href="">Search Movie</a>
-            <a href="">List of Movies</a>
-            <a href="/html/addMovie.html">Add Movie</a>
+            <a href="" class="pages__anchor">Search Movie</a>
+            <a href="" class="pages__anchor">List of Movies</a>
+            <a href="/html/addMovie.html" class="pages__anchor">Add Movie</a>
             <!-- Could add an about page -->
         </div>
     </header>
     <div class="form">
         <form>
             <label for="title">Title:</label>
-            <input type="text" name="title" id="title" required>
+            <input type="text" id="title" class="form__input" required>
             <label for="desc">Description:</label>
-            <textarea name="desc" id="desc" required></textarea>
+            <textarea id="desc" class="form__input" required></textarea>
             <label for="director">Director:</label>
-            <input type="text" name="director" id="director" required>
+            <input type="text" id="director" class="form__input" required>
             <label for="Date-Aired">Date Aired:</label>
-            <input type="date" name="Date-Aired" id="Date-Aired" required>
+            <input type="date" id="Date-Aired" class="form__input" required>
             <label for="genre">Genre:</label>
-            <input type="text" name="genre" id="genre" required>
+            <input type="text" id="genre" class="form__input" required>
             <label for="duration">Duration:</label>
-            <input type="text" name="duration" id="duration" required>
+            <input type="text" id="duration" class="form__input" required>
             <label for="score">Score (1-10):</label>
-            <select name="score" id="score" required>
+            <select id="score" class="form__input" required>
                 <option disabled selected>Select Score</option>
                 <option value="10">(10) Masterpiece</option>
                 <option value="9">(9) Great</option>
@@ -46,8 +46,8 @@
                 <option value="1">(1) Appalling</option>
             </select>
             <label for="image">Cover Image:</label>
-            <input type="file" name="image" id="image" required>
-            <input type="submit" value="Add Movie">
+            <input type="file" id="image" class="form__file" required>
+            <input type="submit" value="Add Movie" class="form__submit">
         </form>
     </div>
     <script src="/script.js"></script>

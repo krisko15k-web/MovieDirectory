@@ -14,7 +14,7 @@ header {
     align-items: center;
 }
 
-.pages>a {
+.pages__anchor {
     font-size: 20px;
     margin: 10px;
     text-decoration: none;
@@ -31,14 +31,18 @@ form {
     width: 50%;
 }
 
-input[type=text], [type=date], textarea, select {
+.form__input {
     padding: 10px 20px;
     margin: 5px 0;
     border-radius: 5px;
     border: 1px solid;
 }
 
-input[type=submit] {
+.form__file {
+    margin: 5px 0;
+}
+
+.form__submit {
     padding: 10px 20px;
     margin: 5px 0;
     border-radius: 5px;
