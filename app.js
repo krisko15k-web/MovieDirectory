@@ -1,10 +1,12 @@
 const express = require('express')
+const mongoose = require('mongoose')
+const Movie = require('./models/movie')
 
 const app = express()
 
-app.set('view engine', 'ejs')
+mongoose.connect('mongodb://localhost:8080/Movie-Directory')
 
-app.listen(8080)
+app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
 
@@ -23,3 +25,5 @@ app.get('/movieList', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About' })
 })
+
+app.listen(8080)
