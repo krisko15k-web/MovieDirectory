@@ -18,7 +18,7 @@ header, footer {
     text-decoration: none;
 }
 
-.form {
+.form, .list {
     padding: 20px;
     margin: auto;
     width: 50%;
