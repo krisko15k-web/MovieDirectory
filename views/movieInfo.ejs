@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <div class="info">
+        <h2><%= movie.title %></h2>
+        <div>
+            <p><%= movie.description %></p>
+        </div>
+        <button class="info__delete" data-info="<%= movie._id %>">Delete</button>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+    <script>
+        const deleteEl = document.querySelector('button.info__delete')
+        deleteEl.addEventListener('click', (e) => {
+            const endpoint = `/movieList/${deleteEl.dataset.info}`
+
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then((res) => res.json())
+            .then((data) => window.location.href = data.redirect)
+            .catch((err) => console.log(err))
+        })
+    </script>
+</body>
+</html>

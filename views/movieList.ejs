@@ -12,8 +12,10 @@
         <% if (movies.length > 0) { %>
             <% movies.forEach(movie => { %>
 
-                <h3><%= movie.title %></h3>
-                <p><%= movie.description %></p>
+                <a class="list__single" href="/movieList/<%= movie._id %>">
+                    <h3><%= movie.title %></h3>
+                    <p><%= movie.description %></p>
+                </a>
 
             <% }) %>
         <% } else { %>

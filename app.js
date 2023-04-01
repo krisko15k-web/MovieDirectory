@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const Movie = require('./models/movie')
+const movieListRoutes = require('./routes/movieListRoutes')
 
 const app = express()
 
@@ -21,27 +21,7 @@ app.get('/addMovie', (req, res) => {
     res.render('addMovie', { title: 'Add Movie' })
 })
 
-app.get('/movieList', (req, res) => {
-    Movie.find().sort({ createdAt: -1 })
-        .then((result) => {
-            res.render('movieList', { title: 'List', movies: result })
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-})
-
-app.post('/movieList', (req, res) => {
-    const movie = new Movie(req.body)
-
-    movie.save()
-        .then((result) => {
-            res.redirect('/movieList')
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-})
+app.use('/movieList', movieListRoutes)
 
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About' })
