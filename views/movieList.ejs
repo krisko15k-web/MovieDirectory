@@ -6,22 +6,24 @@
 <body>
     <%- include('./partials/header.ejs') %>
     
-    <div class="list">
-        <h2>All Movies</h2>
-
-        <% if (movies.length > 0) { %>
-            <% movies.forEach(movie => { %>
-
-                <a class="list__single" href="/movieList/<%= movie._id %>">
-                    <h3><%= movie.title %></h3>
-                    <p><%= movie.description %></p>
-                </a>
-
-            <% }) %>
-        <% } else { %>
-            <p>No Movies have been added...</p>
-        <% } %>
-    </div>
+    <main>
+        <div class="list">
+            <h2>All Movies</h2>
+    
+            <% if (movies.length > 0) { %>
+                <% movies.forEach(movie => { %>
+    
+                    <a class="list__single" href="/movieList/<%= movie._id %>">
+                        <h3><%= movie.title %></h3>
+                        <p><%= movie.description %></p>
+                    </a>
+    
+                <% }) %>
+            <% } else { %>
+                <p>No Movies have been added...</p>
+            <% } %>
+        </div>
+    </main>
 
     <%- include('./partials/footer.ejs') %>
 </body>

@@ -6,13 +6,15 @@
 <body>
     <%- include('./partials/header.ejs') %>
 
-    <div class="info">
-        <h2><%= movie.title %></h2>
-        <div>
-            <p><%= movie.description %></p>
+    <main>
+        <div class="info">
+            <h2><%= movie.title %></h2>
+            <div>
+                <p><%= movie.description %></p>
+            </div>
+            <button class="info__delete" data-info="<%= movie._id %>">Delete</button>
         </div>
-        <button class="info__delete" data-info="<%= movie._id %>">Delete</button>
-    </div>
+    </main>
 
     <%- include('./partials/footer.ejs') %>
     <script>
@@ -20,12 +22,18 @@
         deleteEl.addEventListener('click', (e) => {
             const endpoint = `/movieList/${deleteEl.dataset.info}`
 
-            fetch(endpoint, {
-                method: 'DELETE'
-            })
-            .then((res) => res.json())
-            .then((data) => window.location.href = data.redirect)
-            .catch((err) => console.log(err))
+            const delBtnFunc = async () => {
+                try {
+                    const res = await fetch(endpoint, {
+                        method: 'DELETE'
+                    })
+                    const data = await res.json()
+                    window.location.href = data.redirect
+                } catch (err) {
+                    console.log(err)
+                }
+            }
+            delBtnFunc()
         })
     </script>
 </body>

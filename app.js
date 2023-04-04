@@ -1,12 +1,20 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
-const movieListRoutes = require('./routes/movieListRoutes')
+const listRoutes = require('./routes/listRoutes')
 
 const app = express()
 
-mongoose.connect('mongodb+srv://Kris_Parzulov:9909237944kK@moviedirectory.stwojns.mongodb.net/Movie-Directory?retryWrites=true&w=majority')
-    .then((result) => app.listen(8080))
-    .catch((err) => console.log(err))
+const startServer = async (res) => {
+    try {
+        await mongoose.connect(process.env.MONGODB_CONNECTION_URL)
+        app.listen(8080)
+    } catch (err) {
+        console.log(err)
+        res.status(404).render('404', { title: '404' })
+    }
+}
+startServer()
 
 app.set('view engine', 'ejs')
 
@@ -21,8 +29,12 @@ app.get('/addMovie', (req, res) => {
     res.render('addMovie', { title: 'Add Movie' })
 })
 
-app.use('/movieList', movieListRoutes)
+app.use('/movieList', listRoutes)
 
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About' })
+})
+
+app.use((req, res) => {
+    res.status(404).render('404', { title: '404' })
 })

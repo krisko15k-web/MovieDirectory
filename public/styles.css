@@ -4,12 +4,22 @@ body, form {
     flex-direction: column;
     justify-content: center;
     font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
 }
 
 header, footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: dimgray;
+}
+
+footer {
+    height: 70px;
 }
 
 .pages__anchor {
@@ -46,4 +56,10 @@ header, footer {
 .list__single {
     text-decoration: none;
     color: black;
+}
+
+.error {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2.5em;
 }
