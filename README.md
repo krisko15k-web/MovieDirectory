@@ -5,7 +5,7 @@ Movie Directory is a Project using Node.js, Express.js and MongoDB for adding Mo
 # Description
 The Project contains a Search Page to search for Movies that have been added.
 An Add Movie Page which contains a HTML form for adding different components like:
-Title, Description, Director, Date Aired, Genre, Duration, Score (1-10) and a Cover Image.
+Title, Description, Director, Release Date, Genre, Duration, Score (1-10) and a Cover Image.
 A Movie List Page that lists all Movies that have been added.
 And an About Page.
 

@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
 <body>
-    <%- include('./partials/header.ejs') %>
+    <%- include('../partials/header.ejs') %>
 
     <main>
         <div class="info">
-            <h2><%= movie.title %></h2>
-            <div>
-                <p><%= movie.description %></p>
-            </div>
+            <h3><b>Title:</b> <%= movie.title %></h3>
+            <p><b>Description:</b> <%= movie.description %></p>
+            <p><b>Director:</b> <%= movie.director %></p>
+            <p><b>Release Date:</b> <%= movie.releaseDate.toLocaleDateString('en-GB') %></p>
+            <p><b>Genre:</b> <%= movie.genre %></p>
+            <p><b>Duration:</b> <%= movie.duration %> minutes</p>
+            <p><b>Score:</b> <%= movie.score %></p>
+            <p><%= movie.coverImage %></p>
+
             <button class="info__delete" data-info="<%= movie._id %>">Delete</button>
         </div>
     </main>
 
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
     <script>
         const deleteEl = document.querySelector('button.info__delete')
         deleteEl.addEventListener('click', (e) => {

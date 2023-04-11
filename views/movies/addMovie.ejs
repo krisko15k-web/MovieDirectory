@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
 <body>
-    <%- include('./partials/header.ejs') %>
+    <%- include('../partials/header.ejs') %>
 
     <main>
         <div class="form">
+            <h1>Add a Movie</h1>
             <form action="/movieList" method="POST">
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title" class="form__input">
@@ -15,8 +16,8 @@
                 <textarea id="description" name="description" class="form__input"></textarea>
                 <label for="director">Director:</label>
                 <input type="text" id="director" name="director" class="form__input">
-                <label for="dateAired">Date Aired:</label>
-                <input type="date" id="dateAired" name="dateAired" class="form__input">
+                <label for="releaseDate">Release Date:</label>
+                <input type="date" id="releaseDate" name="releaseDate" class="form__input">
                 <label for="genre">Genre:</label>
                 <input type="text" id="genre" name="genre" class="form__input">
                 <label for="duration">Duration:</label>
@@ -24,16 +25,16 @@
                 <label for="score">Score (1-10):</label>
                 <select id="score" name="score" class="form__input">
                     <option disabled selected>Select Score</option>
-                    <option value="10">(10) Masterpiece</option>
-                    <option value="9">(9) Great</option>
-                    <option value="8">(8) Very Good</option>
-                    <option value="7">(7) Good</option>
-                    <option value="6">(6) Fine</option>
-                    <option value="5">(5) Average</option>
-                    <option value="4">(4) Bad</option>
-                    <option value="3">(3) Very Bad</option>
-                    <option value="2">(2) Horrible</option>
-                    <option value="1">(1) Appalling</option>
+                    <option value="(10) Masterpiece">(10) Masterpiece</option>
+                    <option value="(9) Great">(9) Great</option>
+                    <option value="(8) Very Good">(8) Very Good</option>
+                    <option value="(7) Good">(7) Good</option>
+                    <option value="(6) Fine">(6) Fine</option>
+                    <option value="(5) Average">(5) Average</option>
+                    <option value="(4) Bad">(4) Bad</option>
+                    <option value="(3) Very Bad">(3) Very Bad</option>
+                    <option value="(2) Horrible">(2) Horrible</option>
+                    <option value="(1) Appalling">(1) Appalling</option>
                 </select>
                 <label for="coverImage">Cover Image:</label>
                 <input type="file" id="coverImage" name="coverImage" class="form__file">
@@ -42,6 +43,6 @@
         </div>
     </main>
 
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>

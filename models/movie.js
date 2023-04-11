@@ -11,14 +11,14 @@ const movieSchema = new Schema({
     director: {
         type: String,
     },
-    dateAired: {
+    releaseDate: {
         type: Date,
     },
     genre: {
-        type: [String],
+        type: Array,
     },
     duration: {
-        type: String,
+        type: Number,
     },
     score: {
         type: String,

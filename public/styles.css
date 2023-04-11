@@ -4,6 +4,9 @@ body, form {
     flex-direction: column;
     justify-content: center;
     font-family: Arial, sans-serif;
+}
+
+body {
     min-height: 100vh;
 }
 

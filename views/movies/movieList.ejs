@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
 <body>
-    <%- include('./partials/header.ejs') %>
+    <%- include('../partials/header.ejs') %>
     
     <main>
         <div class="list">
-            <h2>All Movies</h2>
+            <h1>All Movies</h1>
     
             <% if (movies.length > 0) { %>
                 <% movies.forEach(movie => { %>
     
                     <a class="list__single" href="/movieList/<%= movie._id %>">
                         <h3><%= movie.title %></h3>
-                        <p><%= movie.description %></p>
+                        <span><%= movie.coverImage %></span>
                     </a>
     
                 <% }) %>
@@ -25,6 +25,6 @@
         </div>
     </main>
 
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>

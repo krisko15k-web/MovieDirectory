@@ -10,7 +10,7 @@ const errHandler = (res) => {
 const movieList = async (req, res) => {
     try {
         const result = await Movie.find().sort({ createdAt: -1 })
-        res.render('movieList', { title: 'List', movies: result })
+        res.render('movies/movieList', { title: 'List', movies: result })
     } catch { errHandler(res) }
 }
 
@@ -27,7 +27,7 @@ const movieInfo = async (req, res) => {
     const id = req.params.id
     try {
         const result = await Movie.findById(id)
-        res.render('movieInfo', { title: 'Info', movie: result })
+        res.render('movies/movieInfo', { title: 'Info', movie: result })
     } catch { errHandler(res) }
 }
 
