@@ -12,17 +12,21 @@ body {
 
 main {
     flex-grow: 1;
+    padding: 20px;
+    margin: auto;
+    width: 60%;
 }
 
 header, footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: dimgray;
+    background: linear-gradient(to top, #ffffff, #373737);
 }
 
 footer {
     height: 70px;
+    background: linear-gradient(to top, #373737, #ffffff);
 }
 
 .pages__anchor {
@@ -32,17 +36,15 @@ footer {
     color: black;
 }
 
-.form, .list, .info {
-    padding: 20px;
-    margin: auto;
-    width: 50%;
-}
-
 .form__input {
     padding: 10px 20px;
     margin: 5px 0;
     border-radius: 5px;
     border: 1px solid;
+}
+
+.genre__list input {
+    width: 95%;
 }
 
 .form__file {
@@ -56,13 +58,65 @@ footer {
     cursor: pointer;
 }
 
-.list__single {
-    text-decoration: none;
-    color: black;
-}
-
 .error {
     margin: 0 auto;
     text-align: center;
     font-size: 2.5em;
+}
+
+.list__movies {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search__result {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.movie__link {
+    text-align: center;
+    text-decoration: none;
+    transition: 250ms all;
+    color: black;
+    margin: 10px;
+}
+
+.movie__link:hover {
+    transform: scale(1.1);
+}
+
+.movie__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.movie__img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.info {
+    display: block;
+}
+
+.info__img {
+    box-shadow: 0px 10px 20px rgb(0, 0, 0, .5);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.info__title {
+    float: right;
+    font-size: 3em;
+}
+
+.info__content {
+    margin: 30px;
 }

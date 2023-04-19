@@ -8,16 +8,18 @@
 
     <main>
         <div class="info">
-            <h3><b>Title:</b> <%= movie.title %></h3>
-            <p><b>Description:</b> <%= movie.description %></p>
-            <p><b>Director:</b> <%= movie.director %></p>
-            <p><b>Release Date:</b> <%= movie.releaseDate.toLocaleDateString('en-GB') %></p>
-            <p><b>Genre:</b> <%= movie.genre %></p>
-            <p><b>Duration:</b> <%= movie.duration %> minutes</p>
-            <p><b>Score:</b> <%= movie.score %></p>
-            <p><%= movie.coverImage %></p>
+            <img height="450" width="300" src="/images/<%= movie.coverImage %>" alt="cover image" class="info__img">
+            <h1 class="info__title"><%= movie.title %></h1>
+            <div class="info__content">
+                <p><b>Description:</b> <%= movie.description %></p>
+                <p><b>Director:</b> <%= movie.director %></p>
+                <p><b>Release Date:</b> <%= movie.releaseDate.toLocaleDateString('en-GB') %></p>
+                <p><b>Genre:</b> <%= movie.genre %></p>
+                <p><b>Duration:</b> <%= movie.duration %> minutes</p>
+                <p><b>Score:</b> <%= movie.score %></p>
 
-            <button class="info__delete" data-info="<%= movie._id %>">Delete</button>
+                <button class="info__delete" data-info="<%= movie._id %>">Delete</button>
+            </div>
         </div>
     </main>
 

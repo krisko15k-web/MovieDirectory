@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
-const listRoutes = require('./routes/listRoutes')
+const movieRoutes = require('./routes/movieRoutes')
 
 const app = express()
 
@@ -23,14 +23,14 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.render('search', { title: 'Search' })
+    res.redirect('/search')
 })
+
+app.use('/', movieRoutes)
 
 app.get('/addMovie', (req, res) => {
     res.render('movies/addMovie', { title: 'Add Movie' })
 })
-
-app.use('/movieList', listRoutes)
 
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About' })

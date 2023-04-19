@@ -12,16 +12,27 @@
             <form action="/movieList" method="POST">
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title" class="form__input">
+
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" class="form__input"></textarea>
+
                 <label for="director">Director:</label>
                 <input type="text" id="director" name="director" class="form__input">
+
                 <label for="releaseDate">Release Date:</label>
                 <input type="date" id="releaseDate" name="releaseDate" class="form__input">
+
                 <label for="genre">Genre:</label>
-                <input type="text" id="genre" name="genre" class="form__input">
+                <div class="genre__list">
+                    <div class="genre__div">
+                        <input type="text" id="genre" name="genre" class="form__input">
+                    </div>
+                </div>
+                <button type="button" class="form__submit" id="addGenreBtn">Add Genre</button>
+
                 <label for="duration">Duration:</label>
-                <input type="text" id="duration" name="duration" class="form__input">
+                <input type="number" id="duration" name="duration" class="form__input">
+
                 <label for="score">Score (1-10):</label>
                 <select id="score" name="score" class="form__input">
                     <option disabled selected>Select Score</option>
@@ -36,13 +47,27 @@
                     <option value="(2) Horrible">(2) Horrible</option>
                     <option value="(1) Appalling">(1) Appalling</option>
                 </select>
+
                 <label for="coverImage">Cover Image:</label>
-                <input type="file" id="coverImage" name="coverImage" class="form__file">
-                <button class="form__submit">Add Movie</button>
+                <input type="file" id="coverImage" name="coverImage" class="form__file" accept="image/*">
+                
+                <button type="submit" class="form__submit">Add Movie</button>
             </form>
         </div>
     </main>
 
     <%- include('../partials/footer.ejs') %>
+    <script>
+        const addGenreBtn = document.getElementById('addGenreBtn')
+        const genreList = document.querySelector('.genre__list')
+        const genreDiv = document.querySelectorAll('.genre__div')[0]
+
+        addGenreBtn.addEventListener('click', () => {
+            let newGenre = genreDiv.cloneNode(true)
+            let input = newGenre.getElementsByTagName('input')[0]
+            input.value = ''
+            genreList.appendChild(newGenre)
+        })
+    </script>
 </body>
 </html>

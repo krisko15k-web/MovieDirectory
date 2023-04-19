@@ -16,10 +16,11 @@ const movieList = async (req, res) => {
 
 const movieCreate = async (req, res) => {
     const movie = new Movie(req.body)
-
+    const id = req.params.id
     try {
-        const result = await movie.save()
-        res.redirect('/movieList')
+        await movie.save()
+        await Movie.findById(id)
+        res.redirect('/movieList/' + movie._id)
     } catch { errHandler(res) }
 }
 
@@ -39,9 +40,26 @@ const movieDelete = async (req, res) => {
     } catch { errHandler(res) }
 }
 
+const searchMovie = async (req, res) => {
+    try {
+        let searchTerm = req.body.searchTerm
+        const result = await Movie.find({ $text: { $search: searchTerm, $diacriticSensitive: true } })
+        res.render('search', { title: 'Search', result })
+    } catch { errHandler(res) }
+}
+
+const searchPage = async (req, res) => {
+    try {
+        const result = await Movie.find().sort({ createdAt: -1 }).limit(5)
+        res.render('search', { title: 'Search', movies: result })
+    } catch { errHandler(res) }
+}
+
 module.exports = {
     movieList,
     movieCreate,
     movieInfo,
-    movieDelete
+    movieDelete,
+    searchMovie,
+    searchPage
 }

@@ -5,9 +5,29 @@
 
 <body>
     <%- include('./partials/header.ejs') %>
-    
+
     <main>
-        
+        <div class="search">
+            <h1>Search Movies</h1>
+            <form action="/search" method="POST">
+                <input type="search" name="searchTerm" id="searchTerm" class="form__input" placeholder="Search movies...">
+                <button type="submit" class="form__submit">Search</button>
+            </form>
+        </div>
+        <div class="search__result">
+            <% if (movies.length > 0) { %>
+                <% movies.forEach(movie => { %>
+                <a href="/movieList/<%= movie._id %>" class="movie__link">
+                    <div class="movie__img">
+                        <img height="200" width="125" src="/images/<%= movie.coverImage %>" alt="cover image">
+                    </div>
+                    <div><%= movie.title %></div>
+                </a>
+                <% }) %>
+            <% } else { %>
+                <p>No Movies have been added...</p>
+            <% } %>
+        </div>
     </main>
 
     <%- include('./partials/footer.ejs') %>
