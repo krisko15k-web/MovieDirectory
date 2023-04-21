@@ -21,7 +21,7 @@ For the Project I've used the following:
 # User Instructions
 To use the project on your machine you'll have to:
 1. Make a Git Clone
-2. Dependencies needed to install (Express.js, Nodemon, EJS, Mongoose, dotenv)
+2. Dependencies needed to install (Express.js, Nodemon, EJS, Mongoose, dotenv, method-override)
 3. Create a Single Database in MongoDB
 4. Download Postman
 5. Run by typing "nodemon app" in the console and use localhost:8080 in the browser

@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
 <body>
-    <%- include('./partials/header.ejs') %>
+    <%- include('../partials/header.ejs') %>
 
     <main>
         <div class="search">
             <h1>Search Movies</h1>
             <form action="/search" method="POST">
-                <input type="search" name="searchTerm" id="searchTerm" class="form__input" placeholder="Search movies...">
+                <input type="search" name="searchTerm" id="searchTerm" class="form__input" placeholder="Search movies..." required>
                 <button type="submit" class="form__submit">Search</button>
             </form>
         </div>
+        <h2>Recently Added</h2>
         <div class="search__result">
             <% if (movies.length > 0) { %>
-                <% movies.forEach(movie => { %>
+                <% movies.forEach((movie, index) => { %>
                 <a href="/movieList/<%= movie._id %>" class="movie__link">
                     <div class="movie__img">
                         <img height="200" width="125" src="/images/<%= movie.coverImage %>" alt="cover image">
@@ -30,6 +31,6 @@
         </div>
     </main>
 
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>
