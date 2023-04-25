@@ -8,6 +8,7 @@ body, form {
 
 body {
     min-height: 100vh;
+    background: linear-gradient(to right, #ff0000 , #4e0000);
 }
 
 main {
@@ -21,12 +22,10 @@ header, footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(to top, #ffffff, #373737);
 }
 
 footer {
     height: 70px;
-    background: linear-gradient(to top, #373737, #ffffff);
 }
 
 .pages__anchor {
@@ -40,30 +39,31 @@ footer {
     padding: 10px 20px;
     margin: 5px 0;
     border-radius: 5px;
-    border: 1px solid;
+    border: 2px solid black;
+    background: none;
+}
+
+::placeholder {
+    color: black;
 }
 
 .genre__list input {
     width: 95%;
 }
 
-.form__file {
-    margin: 5px 0;
-}
-
-.form__submit, .info__edit, .info__delete {
+.form__submit, .info__edit, .info__delete, input::file-selector-button {
     padding: 10px 20px;
     margin: 5px;
+    border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #e9e9e9;
+    background: none;
 }
 
 .info__edit {
+    padding: 8px 20px 10px;
     text-decoration: none;
     color: black;
-    border: 2px solid black;
-    padding: 8px 20px 10px;
 }
 
 .error {
@@ -127,4 +127,9 @@ footer {
 
 .info__content {
     margin: 30px;
+}
+
+.about__text {
+    text-align: center;
+    margin: 10%;
 }
