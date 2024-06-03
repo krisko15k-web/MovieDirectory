@@ -1,34 +1,37 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const movieSchema = new Schema({
+const movieSchema = new Schema(
+  {
     title: {
-        type: String,
+      type: String,
     },
     description: {
-        type: String,
+      type: String,
     },
     director: {
-        type: String,
+      type: String,
     },
     releaseDate: {
-        type: Date,
+      type: Date,
     },
     genre: {
-        type: Array,
+      type: Array,
     },
     duration: {
-        type: Number,
+      type: Number,
     },
     score: {
-        type: String,
+      type: String,
     },
     coverImage: {
-        type: String,
-    }
-}, { timestamps: true })
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
 
-movieSchema.index({ title: 'text' })
+movieSchema.index({ title: "text" });
 
-const Movie = mongoose.model('Movie', movieSchema)
-module.exports = Movie
+const Movie = mongoose.model("Movie", movieSchema);
+module.exports = Movie;

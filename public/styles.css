@@ -1,135 +1,140 @@
-body, form {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: Arial, sans-serif;
+body,
+form {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    min-height: 100vh;
-    background: linear-gradient(to right, #ff0000 , #4e0000);
+  min-height: 100vh;
+  background: linear-gradient(to right, #ff0000, #4e0000);
 }
 
 main {
-    flex-grow: 1;
-    padding: 20px;
-    margin: auto;
-    width: 60%;
+  flex-grow: 1;
+  padding: 20px;
+  margin: auto;
+  width: 60%;
 }
 
-header, footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+header,
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 footer {
-    height: 70px;
+  height: 70px;
 }
 
 .pages__anchor {
-    font-size: 20px;
-    margin: 10px;
-    text-decoration: none;
-    color: black;
+  font-size: 20px;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
 }
 
 .form__input {
-    padding: 10px 20px;
-    margin: 5px 0;
-    border-radius: 5px;
-    border: 2px solid black;
-    background: none;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 2px solid black;
+  background: none;
 }
 
 ::placeholder {
-    color: black;
+  color: black;
 }
 
 .genre__list input {
-    width: 95%;
+  width: 95%;
 }
 
-.form__submit, .info__edit, .info__delete, input::file-selector-button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: 2px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-    background: none;
+.form__submit,
+.info__edit,
+.info__delete,
+input::file-selector-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  background: none;
 }
 
 .info__edit {
-    padding: 8px 20px 10px;
-    text-decoration: none;
-    color: black;
+  padding: 8px 20px 10px;
+  text-decoration: none;
+  color: black;
 }
 
 .error {
-    margin: 0 auto;
-    text-align: center;
-    font-size: 2.5em;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2.5em;
 }
 
 .list__movies {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .search__result {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .movie__link {
-    text-align: center;
-    text-decoration: none;
-    transition: 250ms all;
-    color: black;
-    margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: 250ms all;
+  color: black;
+  margin: 10px;
 }
 
 .movie__link:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .movie__img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, .5);
-    overflow: hidden;
-    border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .movie__img img {
-    width: 100%;
-    object-fit: cover;
+  width: 100%;
+  object-fit: cover;
 }
 
 .info {
-    display: block;
+  display: block;
 }
 
 .info__img {
-    box-shadow: 0px 10px 20px rgb(0, 0, 0, .5);
-    overflow: hidden;
-    border-radius: 20px;
+  box-shadow: 0px 10px 20px rgb(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .info__title {
-    float: right;
-    font-size: 3em;
+  float: right;
+  font-size: 3em;
 }
 
 .info__content {
-    margin: 30px;
+  margin: 30px;
 }
 
 .about__text {
-    text-align: center;
-    margin: 10%;
+  text-align: center;
+  margin: 10%;
 }

@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('../partials/head.ejs') %>
 
-<%- include('../partials/head.ejs') %>
-
-<body>
+  <body>
     <%- include('../partials/header.ejs') %>
 
     <main>
-        <div class="info">
-            <img height="450" width="300" src="/images/<%= movie.coverImage %>" alt="cover image" class="info__img">
-            <h1 class="info__title"><%= movie.title %></h1>
-            <div class="info__content">
-                <p><b>Description:</b> <%= movie.description %></p>
-                <p><b>Director:</b> <%= movie.director %></p>
-                <p><b>Release Date:</b> <%= movie.releaseDate.toLocaleDateString('en-GB') %></p>
-                <p><b>Genre:</b> <%= movie.genre %></p>
-                <p><b>Duration:</b> <%= movie.duration %> minutes</p>
-                <p><b>Score:</b> <%= movie.score %></p>
-                <a href="/movieList/<%= movie._id %>/edit" class="info__edit">Edit</a>
-                <button class="info__delete" data-info="<%= movie._id %>">Delete</button>
-            </div>
+      <div class="info">
+        <img
+          height="450"
+          width="300"
+          src="/images/<%= movie.coverImage %>"
+          alt="cover image"
+          class="info__img"
+        />
+        <h1 class="info__title"><%= movie.title %></h1>
+        <div class="info__content">
+          <p><b>Description:</b> <%= movie.description %></p>
+          <p><b>Director:</b> <%= movie.director %></p>
+          <p>
+            <b>Release Date:</b> <%=
+            movie.releaseDate.toLocaleDateString('en-GB') %>
+          </p>
+          <p><b>Genre:</b> <%= movie.genre %></p>
+          <p><b>Duration:</b> <%= movie.duration %> minutes</p>
+          <p><b>Score:</b> <%= movie.score %></p>
+          <a href="/movieList/<%= movie._id %>/edit" class="info__edit">Edit</a>
+          <button class="info__delete" data-info="<%= movie._id %>">
+            Delete
+          </button>
         </div>
+      </div>
     </main>
 
     <%- include('../partials/footer.ejs') %>
     <script>
-        const deleteEl = document.querySelector('button.info__delete')
-        deleteEl.addEventListener('click', (e) => {
-            const endpoint = `/movieList/${deleteEl.dataset.info}`
+      const deleteEl = document.querySelector("button.info__delete");
+      deleteEl.addEventListener("click", (e) => {
+        const endpoint = `/movieList/${deleteEl.dataset.info}`;
 
-            const delBtnFunc = async () => {
-                try {
-                    const res = await fetch(endpoint, {
-                        method: 'DELETE'
-                    })
-                    const data = await res.json()
-                    window.location.href = data.redirect
-                } catch (err) {
-                    console.log(err)
-                }
-            }
-            delBtnFunc()
-        })
+        const delBtnFunc = async () => {
+          try {
+            const res = await fetch(endpoint, {
+              method: "DELETE",
+            });
+            const data = await res.json();
+            window.location.href = data.redirect;
+          } catch (err) {
+            console.log(err);
+          }
+        };
+        delBtnFunc();
+      });
     </script>
-</body>
+  </body>
 </html>

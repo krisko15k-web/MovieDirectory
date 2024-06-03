@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('../partials/head.ejs') %>
 
-<%- include('../partials/head.ejs') %>
-
-<body>
+  <body>
     <%- include('../partials/header.ejs') %>
 
     <main>
-        <div class="list">
-            <h1>All Movies</h1>
-            <h4>Number of Movies: <%= movies.length %></h4>
-        </div>
-        <div class="list__movies">
-            <% if (movies.length > 0) { %>
-                <% movies.forEach(movie => { %>
-                    <a href="/movieList/<%= movie._id %>" class="movie__link">
-                        <div class="movie__img">
-                            <img height="200" width="125" src="/images/<%= movie.coverImage %>" alt="cover image">
-                        </div>
-                        <div><%= movie.title %></div>
-                    </a>
-                <% }) %>
-            <% } else { %>
-                <p>No Movies have been added...</p>
-            <% } %>
-        </div>
+      <div class="list">
+        <h1>All Movies</h1>
+        <h4>Number of Movies: <%= movies.length %></h4>
+      </div>
+      <div class="list__movies">
+        <% if (movies.length > 0) { %> <% movies.forEach(movie => { %>
+        <a href="/movieList/<%= movie._id %>" class="movie__link">
+          <div class="movie__img">
+            <img
+              height="200"
+              width="125"
+              src="/images/<%= movie.coverImage %>"
+              alt="cover image"
+            />
+          </div>
+          <div><%= movie.title %></div>
+        </a>
+        <% }) %> <% } else { %>
+        <p>No Movies have been added...</p>
+        <% } %>
+      </div>
     </main>
 
     <%- include('../partials/footer.ejs') %>
-</body>
+  </body>
 </html>
