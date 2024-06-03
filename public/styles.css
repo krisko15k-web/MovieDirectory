@@ -9,7 +9,6 @@ form {
 
 body {
   min-height: 100vh;
-  background: linear-gradient(to right, #ff0000, #4e0000);
 }
 
 main {
@@ -26,8 +25,13 @@ footer {
   align-items: center;
 }
 
+header {
+  background: linear-gradient(to top, #ffffff, #373737);
+}
+
 footer {
   height: 70px;
+  background: linear-gradient(to top, #373737, #ffffff);
 }
 
 .pages__anchor {
